@@ -4,12 +4,10 @@
 
 :root {
     --primary-color: #111111;
-    --secondary-color: #333333;
     --background-color: #e5e5e5;
     --card-color: #ffffff;
     --text-color: #111111;
     --completed-color: #888888;
-    --danger-color: #555555;
 }
 
 
@@ -128,6 +126,11 @@ button:hover {
     background-color: #222222;
 }
 
+#todo-form button {
+    width: 45px;
+    padding: 10px;
+}
+
 /* =========================
    Liste des tâches
 ========================= */
@@ -143,6 +146,7 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 .todo-item span {
@@ -159,14 +163,12 @@ button:hover {
 /* Tâche terminée */
 
 .todo-item.completed {
-    text-decoration: line-through;
-    color: var(--completed-color);
     opacity: 0.7;
 }
 
-.completed span {
+.todo-item.completed span {
     text-decoration: line-through;
-    color: #888888;
+    color: var(--completed-color);
 }
 
 
@@ -204,29 +206,12 @@ button:hover {
 
 @media (max-width: 600px) {
 
-    body {
-        padding: 20px 10px;
-    }
-
-
-    .container {
-        padding: 20px;
-    }
-
-
-    #todo-form {
-        flex-direction: column;
-    }
-
-
-    button {
-        width: 100%;
-    }
-
-
     .todo-item {
-        flex-direction: column;
-        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .todo-item span {
+        width: 100%;
     }
 
 }
