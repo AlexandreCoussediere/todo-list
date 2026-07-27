@@ -8,7 +8,7 @@ Les tâches sont stockées dans un fichier **JSON local** côté backend.
 
 ## Fonctionnalités
 
-- + Ajouter une tâche
+- **+** Ajouter une tâche
 - Afficher toutes les tâches
 - 🖊 Modifier une tâche
 - 🗑 Supprimer une tâche
