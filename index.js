@@ -7,6 +7,8 @@ const PORT = 3000;
 
 const DATA_FILE = "./data/todos.json";
 
+app.use(express.json());
+
 app.use(express.static("public"));
 
 
@@ -57,17 +59,124 @@ app.get("/api/todos", (req, res) => {
 
 // Ajouter une tâche
 app.post("/api/todos", (req, res) => {
-    res.send("POST /api/todos");
+
+    // Lire les tâches existantes
+    const todos = readTodos();
+
+    // Récupérer les données envoyées par le client
+    const { title } = req.body;
+
+    // Créer une nouvelle tâche
+    const newTodo = {
+        id: Date.now(),
+        title: title,
+        completed: false
+    };
+
+    // Ajouter la tâche au tableau
+    todos.push(newTodo);
+
+    // Sauvegarder les modifications
+    writeTodos(todos);
+
+    // Retourner la nouvelle tâche
+    res.status(201).json(newTodo);
+
 });
 
 // Modifier une tâche
 app.put("/api/todos/:id", (req, res) => {
-    res.send(`PUT /api/todos/${req.params.id}`);
+
+    // Lire les tâches
+    const todos = readTodos();
+
+    // Récupérer l'identifiant
+    const id = Number(req.params.id);
+
+    // Récupérer le nouveau titre
+    const { title } = req.body;
+
+    // Rechercher la tâche
+    const todo = todos.find(todo => todo.id === id);
+
+    // Vérifier si elle existe
+    if (!todo) {
+        return res.status(404).json({
+            message: "Tâche introuvable."
+        });
+    }
+
+    // Modifier son contenu
+    todo.title = title;
+
+    // Sauvegarder
+    writeTodos(todos);
+
+    // Retourner la tâche modifiée
+    res.json(todo);
+
 });
 
 // Supprimer une tâche
 app.delete("/api/todos/:id", (req, res) => {
-    res.send(`DELETE /api/todos/${req.params.id}`);
+
+    // Lire les tâches
+    const todos = readTodos();
+
+    // Récupérer l'identifiant
+    const id = Number(req.params.id);
+
+    // Rechercher la tâche
+    const todo = todos.find(todo => todo.id === id);
+
+    // Vérifier si elle existe
+    if (!todo) {
+        return res.status(404).json({
+            message: "Tâche introuvable."
+        });
+    }
+
+    // Supprimer la tâche
+    const updatedTodos = todos.filter(todo => todo.id !== id);
+
+    // Sauvegarder
+    writeTodos(updatedTodos);
+
+    // Retourner une confirmation
+    res.json({
+        message: "Tâche supprimée avec succès."
+    });
+
+});
+
+// Modifier l'état d'une tâche
+app.patch("/api/todos/:id/completed", (req, res) => {
+
+    // Lire les tâches
+    const todos = readTodos();
+
+    // Récupérer l'identifiant
+    const id = Number(req.params.id);
+
+    // Rechercher la tâche
+    const todo = todos.find(todo => todo.id === id);
+
+    // Vérifier si elle existe
+    if (!todo) {
+        return res.status(404).json({
+            message: "Tâche introuvable."
+        });
+    }
+
+    // Modifier son état
+    todo.completed = !todo.completed;
+
+    // Sauvegarder
+    writeTodos(todos);
+
+    // Retourner la tâche mise à jour
+    res.json(todo);
+
 });
 
 app.listen(PORT, () => {
