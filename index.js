@@ -50,6 +50,26 @@ function writeTodos(todos) {
     }
 }
 
+// Récupérer toutes les tâches
+app.get("/api/todos", (req, res) => {
+    res.send("GET /api/todos");
+});
+
+// Ajouter une tâche
+app.post("/api/todos", (req, res) => {
+    res.send("POST /api/todos");
+});
+
+// Modifier une tâche
+app.put("/api/todos/:id", (req, res) => {
+    res.send(`PUT /api/todos/${req.params.id}`);
+});
+
+// Supprimer une tâche
+app.delete("/api/todos/:id", (req, res) => {
+    res.send(`DELETE /api/todos/${req.params.id}`);
+});
+
 app.listen(PORT, () => {
     console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
