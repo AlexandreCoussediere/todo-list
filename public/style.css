@@ -3,13 +3,13 @@
 ========================= */
 
 :root {
-    --primary-color: #4f46e5;
-    --secondary-color: #6366f1;
-    --background-color: #f3f4f6;
+    --primary-color: #111111;
+    --secondary-color: #333333;
+    --background-color: #e5e5e5;
     --card-color: #ffffff;
-    --text-color: #1f2937;
-    --completed-color: #9ca3af;
-    --danger-color: #ef4444;
+    --text-color: #111111;
+    --completed-color: #888888;
+    --danger-color: #555555;
 }
 
 
@@ -95,26 +95,38 @@ h1 {
 ========================= */
 
 button {
-    background-color: var(--primary-color);
+    background-color: #111111;
     color: white;
 
     border: none;
     border-radius: 8px;
 
-    padding: 12px 18px;
+    padding: 10px 14px;
 
     cursor: pointer;
-    font-size: 15px;
+    font-size: 18px;
 
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 
 button:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
+    background-color: #555555;
+    transform: scale(1.05);
 }
 
+.edit-btn {
+    background-color: #777777;
+
+    padding: 8px 12px;
+
+    font-size: 18px;
+}
+
+
+.edit-btn:hover {
+    background-color: #222222;
+}
 
 /* =========================
    Liste des tâches
@@ -129,18 +141,12 @@ button:hover {
 
 .todo-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 10px;
+}
 
-    background-color: #f9fafb;
-
-    padding: 12px;
-
-    margin-bottom: 10px;
-
-    border-radius: 8px;
-
-    transition: transform 0.2s, background-color 0.2s;
+.todo-item span {
+    flex: 1;
 }
 
 
@@ -162,16 +168,16 @@ button:hover {
 /* Bouton supprimer */
 
 .delete-btn {
-    background-color: var(--danger-color);
+    background-color: #444444;
 
     padding: 8px 12px;
 
-    font-size: 14px;
+    font-size: 18px;
 }
 
 
 .delete-btn:hover {
-    background-color: #dc2626;
+    background-color: #000000;
 }
 
 
