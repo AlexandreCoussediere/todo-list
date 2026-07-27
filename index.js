@@ -54,7 +54,13 @@ function writeTodos(todos) {
 
 // Récupérer toutes les tâches
 app.get("/api/todos", (req, res) => {
-    res.send("GET /api/todos");
+
+    // Lire les tâches
+    const todos = readTodos();
+
+    // Retourner les tâches en JSON
+    res.json(todos);
+
 });
 
 // Ajouter une tâche
