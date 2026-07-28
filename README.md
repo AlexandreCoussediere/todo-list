@@ -37,6 +37,12 @@ Les tâches sont stockées dans un fichier **JSON local** côté backend.
 #### Les données sont sauvegardées localement dans : `data/todos.json`
 ---
 
+## Amélioration à venir
+- Remplacer le stockage sur `JSON` par un stockage avec `PostgreSQL`
+- Remplacer le Frontend `html/css/js` en Frontend `React.js`
+- Remplacer le Frontend `React.js` en Frontend `Next.js`
+
+---
 ## Installation
 
 Cloner le projet :
