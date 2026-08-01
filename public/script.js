@@ -45,12 +45,30 @@ async function loadTodos() {
 }
 
 
+// Mettre à jour le compteur de tâches
+function updateCount(todos) {
+
+    const count = document.getElementById("todo-count");
+
+    if (!count) {
+        return;
+    }
+
+    const n = todos.length;
+
+    count.textContent = n + (n > 1 ? " tâches" : " tâche");
+
+}
+
+
 // Afficher les tâches
 function displayTodos(todos) {
 
     const todoList = document.getElementById("todo-list");
 
     todoList.innerHTML = "";
+
+    updateCount(todos);
 
 
     todos.forEach(todo => {

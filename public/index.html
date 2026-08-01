@@ -1,45 +1,109 @@
 <!DOCTYPE html>
+
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Todo List</title>
 
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 
 <body>
 
-    <h1>Ma Todo List</h1>
+
 
     <main class="container">
 
+
+
+        <header class="ticket-header">
+
+            <span class="eyebrow">Carnet du jour</span>
+
+            <h1>Choses à faire</h1>
+
+            <span class="count" id="todo-count">0 tâche</span>
+
+        </header>
+
+
+
         <form id="todo-form">
 
+
+
             <input 
+
                 type="text" 
+
                 id="todo-input" 
+
                 placeholder="Ajouter une tâche..."
+
+                autocomplete="off"
+
             >
 
-            <button type="submit">
+
+
+            <button type="submit" aria-label="Ajouter">
+
                 +
+
             </button>
 
+
+
         </form>
+
+
+
 
 
         <p id="message"></p>
 
 
+
+        <div class="perforation" aria-hidden="true"></div>
+
+
+
         <ul id="todo-list">
+
             <!-- Les tâches seront ajoutées ici par JavaScript -->
+
         </ul>
+
+
 
     </main>
 
 
+
+
+
     <script src="script.js"></script>
 
+
+
 </body>
+
 </html>
