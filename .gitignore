@@ -14,3 +14,11 @@ Thumbs.db
 # Éditeurs de code
 .vscode/
 .idea/
+
+# Base de données locale
+data/todos.db
+data/todos.db-shm
+data/todos.db-wal
+
+# Fichiers compilés TypeScript
+dist/

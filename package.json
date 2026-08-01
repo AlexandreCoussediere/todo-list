@@ -13,11 +13,21 @@
   "license": "MIT",
   "author": "Alexandre Coussediere",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-  "start": "node index.js"
-},
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn src/index.ts"
+  },
   "dependencies": {
+    "better-sqlite3": "^13.0.2",
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.1.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^7.0.2"
   }
 }
