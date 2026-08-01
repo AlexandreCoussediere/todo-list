@@ -1,8 +1,8 @@
 # Todo List
 
-Application de gestion de tâches développée avec **HTML, CSS, JavaScript et Node.js avec Express**.
+Application de gestion de tâches développée avec **HTML, CSS, TypeScript et Node.js avec Express**.
 
-Les tâches sont stockées dans un fichier **JSON local** côté backend.
+Les tâches sont stockées dans une base de données **SQLite** côté backend.
 
 ---
 
@@ -13,7 +13,7 @@ Les tâches sont stockées dans un fichier **JSON local** côté backend.
 - 🖊 Modifier une tâche
 - 🗑 Supprimer une tâche
 - Marquer une tâche comme terminée
-- Sauvegarde automatique dans un fichier JSON
+- Sauvegarde automatique dans une base de données SQLite
 - ⚠️ Gestion des erreurs côté client et serveur
 
 ---
@@ -30,15 +30,16 @@ Les tâches sont stockées dans un fichier **JSON local** côté backend.
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
 ### Stockage
-![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
-#### Les données sont sauvegardées localement dans : `data/todos.json`
+#### Les données sont sauvegardées localement dans : `data/todos.db`
 ---
 
 ## Amélioration à venir
-- Remplacer le stockage sur `JSON` par un stockage avec `PostgreSQL`
+- Remplacer le stockage sur `SQLite` par un stockage avec `PostgreSQL`
 - Remplacer le Frontend `html/css/js` en Frontend `React.js`
 - Remplacer le Frontend `React.js` en Frontend `Next.js`
 
@@ -49,3 +50,28 @@ Cloner le projet :
 
 ```bash
 git clone https://github.com/AlexandreCoussediere/todo-list.git
+```
+
+Installer les dépendances :
+
+```bash
+npm install
+```
+
+Compiler le TypeScript :
+
+```bash
+npm run build
+```
+
+Lancer le serveur :
+
+```bash
+npm start
+```
+
+Ou en mode développement (avec rechargement automatique) :
+
+```bash
+npm run dev
+```
