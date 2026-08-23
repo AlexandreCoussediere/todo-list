@@ -1,24 +1,23 @@
 # Todo List
+Task management application developed using **HTML, CSS, TypeScript, and Node.js with Express**.
 
-Application de gestion de tâches développée avec **HTML, CSS, TypeScript et Node.js avec Express**.
-
-Les tâches sont stockées dans une base de données **SQLite** côté backend.
-
----
-
-## Fonctionnalités
-
-- **+** Ajouter une tâche
-- Afficher toutes les tâches
-- 🖊 Modifier une tâche
-- 🗑 Supprimer une tâche
-- Marquer une tâche comme terminée
-- Sauvegarde automatique dans une base de données SQLite
-- ⚠️ Gestion des erreurs côté client et serveur
+Tasks are stored in an **SQLite** database on the backend.
 
 ---
 
-## Technologies utilisées
+## Features
+
+- **+** Add a task
+- View all tasks
+- 🖊 Edit a task
+- 🗑 Delete a task
+- Mark a task as complete
+- Automatic saving to an SQLite database
+- ⚠️ Client-side and server-side error handling
+
+---
+
+## Technologies Used
 
 ### Frontend
 
@@ -32,45 +31,45 @@ Les tâches sont stockées dans une base de données **SQLite** côté backend.
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-### Stockage
+### Storage
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
-#### Les données sont sauvegardées localement dans : `data/todos.db`
+#### Data is saved locally in: `data/todos.db`
 ---
 
-## Amélioration à venir
-- Remplacer le stockage sur `SQLite` par un stockage avec `PostgreSQL`
-- Remplacer le Frontend `html/css/js` en Frontend `React.js`
-- Remplacer le Frontend `React.js` en Frontend `Next.js`
+## Planned Improvements
+- Replace `SQLite` storage with `PostgreSQL` storage
+- Replace the `HTML/CSS/JS` frontend with a `React.js` frontend
+- Replace the `React.js` frontend with a `Next.js` frontend
 
 ---
 ## Installation
 
-Cloner le projet :
+Clone the project:
 
 ```bash
 git clone https://github.com/AlexandreCoussediere/todo-list.git
 ```
 
-Installer les dépendances :
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Compiler le TypeScript :
+Compile TypeScript:
 
 ```bash
 npm run build
 ```
 
-Lancer le serveur :
+Start the server:
 
 ```bash
 npm start
 ```
 
-Ou en mode développement (avec rechargement automatique) :
+Or in development mode (with auto-reload):
 
 ```bash
 npm run dev
