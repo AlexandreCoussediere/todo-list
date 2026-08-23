@@ -1,46 +1,73 @@
-# Todo List
-Task management application developed using **HTML, CSS, TypeScript, and Node.js with Express**.
-
-Tasks are stored in an **SQLite** database on the backend.
-
----
-
-## Features
-
-- **+** Add a task
-- View all tasks
-- 🖊 Edit a task
-- 🗑 Delete a task
-- Mark a task as complete
-- Automatic saving to an SQLite database
-- ⚠️ Client-side and server-side error handling
+# **Todo List**
+*A Scalable Task Management Application*
+Originally built with **HTML, CSS, and JavaScript**, later upgraded to **TypeScript** for robustness. The backend runs on **Node.js with Express**, and tasks are now stored in a **SQLite** database.
 
 ---
 
-## Technologies Used
+## **Project Evolution**
+My Todo List application has evolved through multiple iterations to improve structure, maintainability, and performance:
 
-### Frontend
+1. **Initial Version**:
+   - **Frontend**: HTML, CSS, JavaScript
+   - **Backend**: Node.js with Express
+   - **Storage**: JSON files (simple but limited scalability)
 
+2. **First Upgrade**:
+   - **Frontend**: HTML, CSS, JavaScript (unchanged)
+   - **Backend**: Node.js with Express
+   - **Storage**: **SQLite** (more robust and local)
+
+3. **Current Version**:
+   - **Frontend**: HTML, CSS, **TypeScript** (for better typing and maintainability)
+   - **Backend**: Node.js with Express
+   - **Storage**: **SQLite** (efficient local storage)
+
+---
+
+## **Features**
+- **➕** Add a task
+- **👁** View all tasks
+- **✏️** Edit a task
+- **🗑** Delete a task
+- **✅** Mark a task as complete
+- **💾** Automatic saving to a **SQLite** database
+- **⚠️** Client-side and server-side error handling
+
+---
+
+## **Technologies Used**
+
+### **Frontend**
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-### Backend
-
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-### Storage
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+> **Why TypeScript?**
+> Transitioned from JavaScript to TypeScript for static typing, reducing common errors and improving code maintainability.
 
-#### Data is saved locally in: `data/todos.db`
 ---
 
-## Planned Improvements
-- Replace `SQLite` storage with `PostgreSQL` storage
-- Replace the `HTML/CSS/JS` frontend with a `React.js` frontend
-- Replace the `React.js` frontend with a `Next.js` frontend
+### **Backend**
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+
+> **Why Express?**
+> A minimalist and flexible framework for Node.js, ideal for building RESTful APIs quickly and efficiently.
+
+---
+### **Storage**
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+
+> **Why SQLite?**
+> A lightweight, serverless, and local database perfect for applications like a Todo List where simplicity and speed are key.
+> Data is stored locally in: `data/todos.db`.
+
+---
+## **Future Improvements (Ideas in Progress)**
+- **Replace SQLite with PostgreSQL** for better scalability and advanced features (complex queries, user management, etc.).
+- **Migrate the frontend to React.js** for a more dynamic and responsive UI.
+- **Adopt Next.js** to combine React’s benefits with server-side rendering (SSR) or static site generation (SSG).
 
 ---
 ## Installation
