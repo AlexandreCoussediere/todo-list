@@ -22,3 +22,4 @@ data/todos.db-wal
 
 # Fichiers compilés TypeScript
 dist/
+public/

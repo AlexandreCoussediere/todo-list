@@ -17,7 +17,11 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "ts-node-dev --respawn src/index.ts"
+    "dev:server": "ts-node-dev --respawn src/index.ts",
+    "dev:client": "npm --prefix client run dev",
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "build:client": "npm --prefix client run build",
+    "build:all": "npm run build:client && npm run build"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.2",
@@ -27,7 +31,8 @@
     "@types/better-sqlite3": "^9.6.0",
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.2",
+    "concurrently": "^10.0.5",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^7.0.2"
+    "typescript": "^5.7.2"
   }
 }

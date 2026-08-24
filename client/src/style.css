@@ -1,0 +1,377 @@
+/* =========================
+   Design tokens
+   Thème "carnet / ticket" — fond encre profonde,
+   carte façon papier avec bord perforé.
+========================= */
+ 
+:root {
+    --ink: #17242b;
+    --ink-soft: #24363f;
+    --paper: #faf6ec;
+    --paper-dim: #eee7d6;
+    --accent: #f2a93b;
+    --accent-dark: #c97f1f;
+    --line: #cabf9f;
+    --danger: #c1493f;
+    --completed-color: #9a9382;
+    --radius: 14px;
+ 
+    --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", "Courier New", monospace;
+}
+ 
+ 
+/* =========================
+   Style général
+========================= */
+ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+ 
+body {
+    font-family: var(--font-mono);
+    background-color: var(--ink);
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(242, 169, 59, 0.10), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(242, 169, 59, 0.07), transparent 45%);
+    color: var(--ink);
+ 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+    padding: 40px 20px;
+}
+ 
+ 
+/* =========================
+   Conteneur principal — "fiche" en papier
+========================= */
+ 
+.container {
+    background-color: var(--paper);
+    background-image: linear-gradient(var(--paper-dim) 1px, transparent 1px);
+    background-size: 100% 40px;
+ 
+    position: relative;
+ 
+    width: 100%;
+    max-width: 460px;
+ 
+    padding: 34px 32px 30px;
+    border-radius: var(--radius);
+ 
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.35),
+        0 2px 0 rgba(255, 255, 255, 0.4) inset;
+}
+ 
+/* petite encoche/agrafe en haut, comme un carnet à spirale */
+.container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 46px;
+    height: 20px;
+    background: var(--ink);
+    border-radius: 0 0 10px 10px;
+    opacity: 0.9;
+}
+ 
+ 
+/* =========================
+   En-tête
+========================= */
+ 
+.ticket-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 24px;
+}
+ 
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    font-weight: 500;
+}
+ 
+h1 {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+}
+ 
+.count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--completed-color);
+    margin-top: 2px;
+}
+ 
+ 
+/* =========================
+   Formulaire
+========================= */
+ 
+#todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+ 
+ 
+#todo-input {
+    flex: 1;
+    font-family: var(--font-mono);
+ 
+    padding: 12px 14px;
+ 
+    background-color: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: 8px;
+ 
+    font-size: 15px;
+    color: var(--ink);
+}
+ 
+#todo-input::placeholder {
+    color: #b3ab93;
+}
+ 
+ 
+#todo-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(242, 169, 59, 0.25);
+}
+ 
+ 
+/* =========================
+   Boutons
+========================= */
+ 
+button {
+    background-color: var(--ink);
+    color: var(--paper);
+ 
+    border: none;
+    border-radius: 8px;
+ 
+    padding: 10px 14px;
+ 
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+ 
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+ 
+ 
+button:hover {
+    background-color: var(--ink-soft);
+    transform: translateY(-1px);
+}
+ 
+button:active {
+    transform: translateY(0);
+}
+ 
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+ 
+.edit-btn {
+    background-color: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--line);
+ 
+    padding: 7px 11px;
+ 
+    font-size: 15px;
+}
+ 
+ 
+.edit-btn:hover {
+    background-color: var(--ink);
+    color: var(--paper);
+}
+ 
+#todo-form button {
+    width: 46px;
+    padding: 10px;
+    background-color: var(--accent);
+    color: var(--ink);
+}
+ 
+#todo-form button:hover {
+    background-color: var(--accent-dark);
+    color: var(--paper);
+}
+ 
+ 
+/* =========================
+   Séparateur perforé
+   (signature visuelle : ligne pointillée type ticket détachable)
+========================= */
+ 
+.perforation {
+    position: relative;
+    height: 1px;
+    margin: 4px -32px 18px;
+    border-top: 2px dashed var(--line);
+}
+ 
+.perforation::before,
+.perforation::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    width: 16px;
+    height: 16px;
+    background: var(--ink);
+    border-radius: 50%;
+}
+ 
+.perforation::before { left: -8px; }
+.perforation::after { right: -8px; }
+ 
+ 
+/* =========================
+   Liste des tâches
+========================= */
+ 
+#todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+ 
+ 
+/* Tâche */
+ 
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ 
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+ 
+    font-family: var(--font-mono);
+    font-size: 15px;
+ 
+    transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+ 
+.todo-item span {
+    flex: 1;
+    word-break: break-word;
+}
+ 
+ 
+.todo-item:hover {
+    transform: translateX(4px);
+    background-color: #fff;
+    border-color: var(--line);
+}
+ 
+ 
+/* Tâche terminée */
+ 
+.todo-item.completed {
+    opacity: 0.75;
+}
+ 
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: var(--completed-color);
+}
+ 
+ 
+/* Bouton supprimer */
+ 
+.delete-btn {
+    background-color: transparent;
+    color: var(--danger);
+    border: 1.5px solid rgba(193, 73, 63, 0.35);
+ 
+    padding: 7px 11px;
+    font-size: 15px;
+}
+ 
+ 
+.delete-btn:hover {
+    background-color: var(--danger);
+    color: var(--paper);
+    border-color: var(--danger);
+}
+ 
+ 
+/* =========================
+   Messages
+========================= */
+ 
+#message {
+    min-height: 20px;
+    margin-bottom: 10px;
+ 
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent-dark);
+}
+ 
+ 
+/* =========================
+   Accessibilité — mouvement réduit
+========================= */
+ 
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+ 
+ 
+/* =========================
+   Responsive
+========================= */
+ 
+@media (max-width: 600px) {
+ 
+    .container {
+        padding: 28px 20px 24px;
+    }
+ 
+    .perforation {
+        margin: 4px -20px 18px;
+    }
+ 
+    .todo-item {
+        flex-wrap: wrap;
+    }
+ 
+    .todo-item span {
+        width: 100%;
+    }
+ 
+}
+ 
