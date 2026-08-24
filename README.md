@@ -17,11 +17,15 @@ My Todo List application has evolved through multiple iterations to improve stru
    - **Backend**: Node.js with Express
    - **Storage**: **SQLite** (more robust and local)
 
-3. **Current Version**:
+3. **Second Upgrade**:
    - **Frontend**: HTML, CSS, **TypeScript** (for better typing and maintainability)
    - **Backend**: Node.js with Express
    - **Storage**: **SQLite** (efficient local storage)
 
+4. **Actual Version**:
+   - **Frontend**: React.js, **TypeScript** (for better typing and maintainability)
+   - **Backend**: Node.js with Express
+   - **Storage**: **SQLite** (efficient local storage)
 ---
 
 ## **Features**
@@ -38,9 +42,7 @@ My Todo List application has evolved through multiple iterations to improve stru
 ## **Technologies Used**
 
 ### **Frontend**
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
 > **Why TypeScript?**
@@ -66,7 +68,6 @@ My Todo List application has evolved through multiple iterations to improve stru
 ---
 ## **Future Improvements (Ideas in Progress)**
 - **Replace SQLite with PostgreSQL** for better scalability and advanced features (complex queries, user management, etc.).
-- **Migrate the frontend to React.js** for a more dynamic and responsive UI.
 - **Adopt Next.js** to combine React’s benefits with server-side rendering (SSR) or static site generation (SSG).
 
 ---
